@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-palette="emerald">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdullah Saeed | Software Engineer & Web Developer</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Abdullah Saeed - Software Engineer and Web Developer specializing in modern, responsive, high-performance web applications like Fitzone Fitness and ApexStore.">
+  <meta name="keywords" content="Abdullah Saeed, Software Engineer, Web Developer, Frontend Developer, JavaScript, HTML5, CSS3, Fitzone Fitness, ApexStore, Portfolio">
+  <meta name="author" content="Abdullah Saeed">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Abdullah Saeed | Software Engineer & Web Developer">
+  <meta property="og:description" content="Explore modern web applications, frontend architecture, and interactive digital products built by Abdullah Saeed.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon (SVG Monogram) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2310b981'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='44' font-weight='bold' fill='%23ffffff'>AS</text></svg>">
+</head>
+<body>
+  <!-- Reading Scroll Progress Bar -->
+  <div class="scroll-progress-container" aria-hidden="true"> 
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Ambient Background Lighting & Interactive Particle Canvas -->
+  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="header">
+    <nav class="nav-container" aria-label="Main Navigation">
+      <a href="index.html" class="nav-brand" aria-label="Abdullah Saeed Home">
+        <span class="brand-monogram has-avatar">
+          <img src="assets/images/profile.jpg" alt="Abdullah Saeed" class="brand-avatar-img">
+        </span>
+        <span class="brand-name">Abdullah<span> Saeed</span></span>
+      </a>
+
+      <div class="nav-links-desktop">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Palette Switcher -->
+        <div class="palette-switcher" title="Choose color accent" aria-label="Theme Color Accent">
+          <button class="palette-btn palette-emerald active" data-palette="emerald" title="Emerald & Mint" aria-label="Emerald and Mint color theme" aria-pressed="true"></button>
+          <button class="palette-btn palette-violet" data-palette="violet" title="Cyber Violet & Amber" aria-label="Cyber Violet color theme" aria-pressed="false"></button>
+          <button class="palette-btn palette-gold" data-palette="gold" title="Champagne Gold" aria-label="Champagne Gold color theme" aria-pressed="false"></button>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="btn-icon theme-btn" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="contact.html" class="btn btn-sm btn-primary nav-cta">Let's Connect</a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-user">
+        <div class="drawer-avatar-ring">
+          <img src="assets/images/profile.jpg" alt="Abdullah Saeed" class="drawer-avatar-img">
+        </div>
+        <div class="drawer-user-info">
+          <span class="drawer-user-name">Abdullah Saeed</span>
+          <span class="drawer-user-role">Software Engineer</span>
+        </div>
+      </div>
+      <button id="drawer-close" class="btn-icon" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-links">
+      <a href="index.html" class="drawer-link active">Home</a>
+      <a href="about.html" class="drawer-link">About Me</a>
+      <a href="projects.html" class="drawer-link">Projects</a>
+      <a href="skills.html" class="drawer-link">Skills & Services</a>
+      <a href="contact.html" class="drawer-link">Contact Hub</a>
+    </div>
+    <div class="drawer-footer">
+      <div class="drawer-theme-row">
+        <span class="drawer-theme-label">Accent Palette</span>
+        <div class="palette-switcher" title="Choose color accent">
+          <button class="palette-btn palette-emerald active" data-palette="emerald" title="Emerald"></button>
+          <button class="palette-btn palette-violet" data-palette="violet" title="Violet"></button>
+          <button class="palette-btn palette-gold" data-palette="gold" title="Gold"></button>
+        </div>
+      </div>
+
+      <div class="drawer-theme-row">
+        <span class="drawer-theme-label">Appearance</span>
+        <button id="drawer-theme-toggle" class="drawer-theme-toggle" aria-label="Toggle theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span class="theme-text">Toggle Mode</span>
+        </button>
+      </div>
+
+      <div class="drawer-contact-section">
+        <p class="drawer-contact-title">Direct Inquiries</p>
+        <a href="mailto:abhiihere2004@gmail.com" class="drawer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>abhiihere2004@gmail.com</span>
+        </a>
+        <a href="tel:0395241669" class="drawer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>0395241669</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content" data-reveal="left">
+          <!-- Availability Badge -->
+          <div class="availability-badge">
+            <span class="pulsing-dot" aria-hidden="true"></span>
+            <span>Available for new projects & opportunities</span>
+          </div>
+
+          <!-- Main Intro -->
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Abdullah Saeed</span>
+          </h1>
+
+          <!-- Dynamic Role Typewriter -->
+          <div class="hero-role-wrapper">
+            <span class="role-prefix">Specialized as a </span>
+            <span id="role-typewriter" class="role-highlight">Software Engineer</span>
+            <span class="typewriter-cursor">|</span>
+          </div>
+
+          <!-- Description -->
+          <p class="hero-description">
+            Passionate software engineer and web developer crafting responsive, clean-architected, and high-conversion web applications. Dedicated to bridging user-friendly UI design with robust, reliable code.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-buttons">
+            <a href="projects.html" class="btn btn-primary btn-lg">
+              <span>View Projects</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="contact.html" class="btn btn-secondary btn-lg">
+              <span>Get in Touch</span>
+            </a>
+            <a href="https://github.com/abhiihere2004-alt" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg" title="View GitHub Profile">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+
+          <!-- Quick Contact Meta Strip -->
+          <div class="hero-quick-meta">
+            <div class="meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>abhiihere2004@gmail.com</span>
+              <button class="btn-copy-chip" data-copy="abhiihere2004@gmail.com" title="Copy email address">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>0395241669</span>
+              <button class="btn-copy-chip" data-copy="0395241669" title="Copy phone number">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Graphic / Code Card -->
+        <div class="hero-visual" data-reveal="right">
+          <!-- Featured Profile Card -->
+          <div class="hero-profile-card">
+            <div class="hero-avatar-wrapper">
+              <div class="hero-avatar-ring">
+                <img src="assets/images/profile.jpg" alt="Abdullah Saeed - Software Engineer" class="hero-avatar-img">
+              </div>
+              <span class="hero-avatar-status" title="Active & Available for Projects">
+                <span class="pulsing-dot"></span>
+              </span>
+            </div>
+            <div class="hero-profile-info">
+              <div class="hero-profile-name-row">
+                <span class="hero-profile-name">Abdullah Saeed</span>
+                <span class="verified-badge" title="Verified Software Engineer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </span>
+              </div>
+              <span class="hero-profile-role">Software Engineer &amp; Web Developer</span>
+              <div class="hero-profile-tags">
+                <span class="profile-mini-tag">Frontend</span>
+                <span class="profile-mini-tag">Vanilla JS</span>
+                <span class="profile-mini-tag">UI / UX</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="code-window-card">
+            <div class="window-header">
+              <div class="traffic-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="window-title">abdullah-profile.js</span>
+              <span class="window-lang">ES6+</span>
+            </div>
+            <div class="window-body">
+              <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-prop">name</span>: <span class="code-string">"Abdullah Saeed"</span>,
+  <span class="code-prop">role</span>: <span class="code-string">"Software Engineer & Web Dev"</span>,
+  <span class="code-prop">passions</span>: [<span class="code-string">"Modern UI"</span>, <span class="code-string">"Clean Code"</span>, <span class="code-string">"Performance"</span>],
+  <span class="code-prop">featuredWorks</span>: [
+    <span class="code-string">"Fitzone Fitness"</span>,
+    <span class="code-string">"ApexStore E-Commerce"</span>
+  ],
+  <span class="code-prop">openForWork</span>: <span class="code-boolean">true</span>,
+  <span class="code-func">buildProduct</span>() {
+    <span class="code-keyword">return</span> <span class="code-string">"Fast, scalable & user-first web apps"</span>;
+  }
+};</code></pre>
+            </div>
+            <!-- Animated Stats Bar on Scroll -->
+            <div class="window-stats">
+              <div class="stat-pill">
+                <span class="stat-num stat-counter-num">2+</span>
+                <span class="stat-label">Production Works</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-pill">
+                <span class="stat-num stat-counter-num">100%</span>
+                <span class="stat-label">Responsive UI</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-pill">
+                <span class="stat-num">&lt;1s</span>
+                <span class="stat-label">Optimized Load</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- At a Glance / Multi-Page Navigation Hub -->
+    <section class="home-preview-section">
+      <div class="container">
+        <div class="section-header text-center" data-reveal="up">
+          <span class="section-subtitle">Portfolio Overview</span>
+          <h2 class="section-title">Explore Abdullah's World</h2>
+          <div class="section-divider"></div>
+          <p class="section-lead">
+            Dive into in-depth sections covering background experience, production web applications, and full technical capabilities.
+          </p>
+        </div>
+
+        <div class="preview-grid">
+          <!-- Card 1: About Me -->
+          <a href="about.html" class="preview-card glass-card" data-reveal="up" data-delay="100">
+            <div>
+              <div class="preview-card-header">
+                <div class="preview-icon" style="overflow: hidden; padding: 2px;">
+                  <img src="assets/images/profile.jpg" alt="Abdullah Saeed" style="width: 100%; height: 100%; border-radius: var(--radius-sm); object-fit: cover; display: block;">
+                </div>
+                <h3 class="preview-title">About Me</h3>
+              </div>
+              <p class="preview-desc">
+                Learn about my development philosophy, career milestones, engineering pillars, and the tools I use daily to craft robust software.
+              </p>
+            </div>
+            <span class="preview-link">
+              <span>Read Full Bio & Timeline</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+
+          <!-- Card 2: Featured Projects -->
+          <a href="projects.html" class="preview-card glass-card" data-reveal="up" data-delay="200">
+            <div>
+              <div class="preview-card-header">
+                <div class="preview-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <h3 class="preview-title">Featured Projects</h3>
+              </div>
+              <p class="preview-desc">
+                Explore real-world case studies including Fitzone Fitness and ApexStore with live demos, GitHub repositories, and interactive architectural filters.
+              </p>
+            </div>
+            <span class="preview-link">
+              <span>Explore All Projects</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+
+          <!-- Card 3: Skills & Services -->
+          <a href="skills.html" class="preview-card glass-card" data-reveal="up" data-delay="300">
+            <div>
+              <div class="preview-card-header">
+                <div class="preview-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <h3 class="preview-title">Skills & Services</h3>
+              </div>
+              <p class="preview-desc">
+                Review technical toolkits across frontend core, modern UI/UX craft, version control, and client services ranging from landing pages to full applications.
+              </p>
+            </div>
+            <span class="preview-link">
+              <span>View Skills & Services</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Spotlight Teaser -->
+    <section class="section projects-section">
+      <div class="container">
+        <div class="section-header text-center" data-reveal="up">
+          <span class="section-subtitle">Proven Engineering</span>
+          <h2 class="section-title">Spotlight Works</h2>
+          <div class="section-divider"></div>
+          <p class="section-lead">
+            Highlighted web products engineered for high performance, smooth UX, and clean scalability.
+          </p>
+        </div>
+
+        <div class="projects-showcase">
+          <!-- Project 1: Fitzone Fitness -->
+          <article class="project-card glass-card" data-reveal="up">
+            <div class="project-media">
+              <img src="assets/images/fitzone-preview.jpg" alt="Fitzone Fitness single page web app preview" class="project-img" loading="lazy">
+              <div class="project-media-overlay">
+                <span class="project-badge">Web Application</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-header">
+                <div class="project-tags">
+                  <span class="tag">HTML5</span>
+                  <span class="tag">CSS3</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Responsive UI</span>
+                </div>
+                <h3 class="project-title">Fitzone Fitness</h3>
+              </div>
+
+              <p class="project-description">
+                A high-energy, responsive single-page web application for FitZone ("Train Hard. Stay Strong."). Features structured training programs, coach spotlights, membership tier plans, and modern dark gym aesthetics.
+              </p>
+
+              <div class="project-features">
+                <div class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Mobile-first responsive layout</span>
+                </div>
+                <div class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Interactive schedules & pricing tiers</span>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://capable-pixie-7a0ab4.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" title="View Fitzone Fitness Live Demo">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/abhiihere2004-alt/Fitzone-Fitness" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" title="View Fitzone Fitness on GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>Source Code</span>
+                </a>
+                <button class="btn btn-outline btn-quick-view" data-project="fitzone">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <span>Overview</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: ApexStore -->
+          <article class="project-card glass-card" data-reveal="up" data-delay="150">
+            <div class="project-media">
+              <img src="assets/images/apexstore-preview.jpg" alt="ApexStore modern e-commerce web application preview" class="project-img" loading="lazy">
+              <div class="project-media-overlay">
+                <span class="project-badge badge-cyan">E-Commerce Storefront</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-header">
+                <div class="project-tags">
+                  <span class="tag">HTML5</span>
+                  <span class="tag">CSS3</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">State Management</span>
+                </div>
+                <h3 class="project-title">ApexStore</h3>
+              </div>
+
+              <p class="project-description">
+                A modern e-commerce storefront for curated lifestyle and audio essentials. Features interactive product collections, real-time cart state management, discount promo code logic, and Netlify hosting.
+              </p>
+
+              <div class="project-features">
+                <div class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Interactive product catalog & dynamic filters</span>
+                </div>
+                <div class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Cart state management & real-time totals</span>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/abhiihere2004-alt/APEX-STORE" target="_blank" rel="noopener noreferrer" class="btn btn-primary" title="View ApexStore on GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>Source Code</span>
+                </a>
+                <button class="btn btn-secondary btn-quick-view" data-project="apexstore">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <span>Project Overview</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Link to Full Projects Page -->
+        <div class="text-center" style="margin-top: 48px;" data-reveal="up">
+          <a href="projects.html" class="btn btn-primary btn-lg">
+            <span>Explore All Projects & Categories</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="container" data-reveal="scale">
+      <div class="cta-banner glass-card">
+        <h2 class="cta-title">Let's Build Something Exceptional</h2>
+        <p class="cta-desc">
+          Have an upcoming project, freelance inquiry, or engineering role? I'm available worldwide and ready to collaborate.
+        </p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg">
+            <span>Get in Touch</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </a>
+          <a href="mailto:abhiihere2004@gmail.com" class="btn btn-secondary btn-lg">
+            <span>Email Direct</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Quick Project Overview Modal -->
+  <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-content glass-card">
+      <button class="modal-close" id="modal-close" aria-label="Close details modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Floating Back to Top Button with SVG Progress Ring -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top" title="Scroll to top">
+    <svg class="progress-ring" width="50" height="50">
+      <circle class="progress-ring-bg" cx="25" cy="25" r="22.5"></circle>
+      <circle class="progress-ring-circle" cx="25" cy="25" r="22.5"></circle>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <span class="brand-monogram">AS</span>
+        <div>
+          <p class="footer-title">Abdullah Saeed</p>
+          <p class="footer-subtitle">Software Engineer & Web Developer</p>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-right">
+        <p class="copyright">© 2026 Abdullah Saeed. Built with passion & clean code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

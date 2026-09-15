@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-palette="emerald">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Hub | Abdullah Saeed - Software Engineer</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Contact Abdullah Saeed - Software Engineer & Web Developer. Inquire about freelance web development, engineering collaborations, or hiring opportunities.">
+  <meta name="keywords" content="Contact Abdullah Saeed, Hire Web Developer, Software Engineer Contact, Email, Phone, Pakistan, Remote">
+  <meta name="author" content="Abdullah Saeed">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Contact Hub | Abdullah Saeed - Software Engineer">
+  <meta property="og:description" content="Reach out directly to Abdullah Saeed for collaboration, hiring, or web development inquiries.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon (SVG Monogram) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2310b981'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='44' font-weight='bold' fill='%23ffffff'>AS</text></svg>">
+</head>
+<body>
+  <!-- Reading Scroll Progress Bar -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Ambient Background Lighting & Interactive Particle Canvas -->
+  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="header">
+    <nav class="nav-container" aria-label="Main Navigation">
+      <a href="index.html" class="nav-brand" aria-label="Abdullah Saeed Home">
+        <span class="brand-monogram has-avatar">
+          <img src="assets/images/profile.jpg" alt="Abdullah Saeed" class="brand-avatar-img">
+        </span>
+        <span class="brand-name">Abdullah<span> Saeed</span></span>
+      </a>
+
+      <div class="nav-links-desktop">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Palette Switcher -->
+        <div class="palette-switcher" title="Choose color accent" aria-label="Theme Color Accent">
+          <button class="palette-btn palette-emerald active" data-palette="emerald" title="Emerald & Mint" aria-label="Emerald and Mint color theme" aria-pressed="true"></button>
+          <button class="palette-btn palette-violet" data-palette="violet" title="Cyber Violet & Amber" aria-label="Cyber Violet color theme" aria-pressed="false"></button>
+          <button class="palette-btn palette-gold" data-palette="gold" title="Champagne Gold" aria-label="Champagne Gold color theme" aria-pressed="false"></button>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="btn-icon theme-btn" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="contact.html" class="btn btn-sm btn-primary nav-cta">Let's Connect</a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-user">
+        <div class="drawer-avatar-ring">
+          <img src="assets/images/profile.jpg" alt="Abdullah Saeed" class="drawer-avatar-img">
+        </div>
+        <div class="drawer-user-info">
+          <span class="drawer-user-name">Abdullah Saeed</span>
+          <span class="drawer-user-role">Software Engineer</span>
+        </div>
+      </div>
+      <button id="drawer-close" class="btn-icon" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-links">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="about.html" class="drawer-link">About Me</a>
+      <a href="projects.html" class="drawer-link">Projects</a>
+      <a href="skills.html" class="drawer-link">Skills & Services</a>
+      <a href="contact.html" class="drawer-link active">Contact Hub</a>
+    </div>
+    <div class="drawer-footer">
+      <div class="drawer-theme-row">
+        <span class="drawer-theme-label">Accent Palette</span>
+        <div class="palette-switcher" title="Choose color accent">
+          <button class="palette-btn palette-emerald active" data-palette="emerald" title="Emerald"></button>
+          <button class="palette-btn palette-violet" data-palette="violet" title="Violet"></button>
+          <button class="palette-btn palette-gold" data-palette="gold" title="Gold"></button>
+        </div>
+      </div>
+
+      <div class="drawer-theme-row">
+        <span class="drawer-theme-label">Appearance</span>
+        <button id="drawer-theme-toggle" class="drawer-theme-toggle" aria-label="Toggle theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span class="theme-text">Toggle Mode</span>
+        </button>
+      </div>
+
+      <div class="drawer-contact-section">
+        <p class="drawer-contact-title">Direct Inquiries</p>
+        <a href="mailto:abhiihere2004@gmail.com" class="drawer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>abhiihere2004@gmail.com</span>
+        </a>
+        <a href="tel:0395241669" class="drawer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>0395241669</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+
+  <main id="main-content">
+    <!-- Page Hero Banner -->
+    <section class="page-hero">
+      <div class="container" data-reveal="up">
+        <span class="page-badge">Direct Communication</span>
+        <h1 class="page-title">Let's Start a <span class="gradient-text">Conversation</span></h1>
+        <p class="page-lead">
+          Have an inquiry, project proposal, or engineering opportunity? Reach out directly or complete the message form below.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Contact Grid -->
+    <section class="section contact-section" style="padding-top: 0;">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Direct Channels Box -->
+          <div class="contact-info-col" data-reveal="left">
+            <!-- Author Profile Card -->
+            <div class="contact-profile-card glass-card">
+              <div class="contact-avatar-wrapper">
+                <div class="contact-avatar-ring">
+                  <img src="assets/images/profile.jpg" alt="Abdullah Saeed" class="contact-avatar-img">
+                </div>
+                <span class="contact-status-dot" title="Ready to collaborate">
+                  <span class="pulsing-dot"></span>
+                </span>
+              </div>
+              <div class="contact-profile-meta">
+                <div class="contact-profile-name-row">
+                  <span class="contact-profile-name">Abdullah Saeed</span>
+                  <span class="verified-badge" title="Verified Software Engineer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                  </span>
+                </div>
+                <span class="contact-profile-title">Software Engineer &amp; Web Developer</span>
+                <span class="contact-availability-chip">
+                  <span class="pulsing-dot"></span> Open for Opportunities
+                </span>
+              </div>
+            </div>
+
+            <!-- Email Card -->
+            <div class="contact-card glass-card">
+              <div class="contact-icon icon-cyan">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-label">Email Address</span>
+                <a href="mailto:abhiihere2004@gmail.com" class="contact-link">abhiihere2004@gmail.com</a>
+              </div>
+              <button class="btn-copy-card" data-copy="abhiihere2004@gmail.com" title="Copy email address">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy</span>
+              </button>
+            </div>
+
+            <!-- Phone Card -->
+            <div class="contact-card glass-card">
+              <div class="contact-icon icon-emerald">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-label">Phone & WhatsApp</span>
+                <a href="tel:0395241669" class="contact-link">0395241669</a>
+              </div>
+              <button class="btn-copy-card" data-copy="0395241669" title="Copy phone number">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy</span>
+              </button>
+            </div>
+
+            <!-- Availability & Location Info -->
+            <div class="contact-card glass-card">
+              <div class="contact-icon icon-violet">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-label">Working Availability</span>
+                <span style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Worldwide Remote / Fast 24h Response</span>
+              </div>
+            </div>
+
+            <!-- Social Links Strip -->
+            <div class="social-links-card glass-card">
+              <span class="social-header-title">Online Profiles</span>
+              <div class="social-buttons-grid">
+                <a href="https://github.com/abhiihere2004-alt" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub Profile">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+
+                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn Profile">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-col" data-reveal="right">
+            <form id="contact-form" class="contact-form glass-card" novalidate>
+              <h2 class="form-title" style="font-size: 1.4rem;">Send a Direct Message</h2>
+              <p class="form-desc">Fill out this quick form and I'll get back to you promptly.</p>
+
+              <div class="form-group">
+                <label for="form-name" class="form-label">Your Name</label>
+                <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Sarah Jenkins" required>
+                <span class="form-error" id="name-error">Please enter your name</span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">Email Address</label>
+                <input type="email" id="form-email" name="email" class="form-input" placeholder="name@company.com" required>
+                <span class="form-error" id="email-error">Please enter a valid email address</span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label">Subject</label>
+                <input type="text" id="form-subject" name="subject" class="form-input" placeholder="Project Inquiry / Opportunity" required>
+                <span class="form-error" id="subject-error">Please enter a subject</span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Your Message</label>
+                <textarea id="form-message" name="message" rows="5" class="form-textarea" placeholder="Tell me about your project, timeline, or requirements..." required></textarea>
+                <span class="form-error" id="message-error">Please enter your message</span>
+              </div>
+
+              <button type="submit" id="form-submit-btn" class="btn btn-primary btn-block">
+                <span>Send Message</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header text-center" data-reveal="up">
+          <span class="section-subtitle">Common Questions</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <div class="section-divider"></div>
+          <p class="section-lead">
+            Answers to common questions about timelines, working arrangements, and development process.
+          </p>
+        </div>
+
+        <div class="faq-accordion" data-reveal="up">
+          <!-- FAQ 1 -->
+          <div class="faq-item glass-card open">
+            <button class="faq-question" aria-expanded="true">
+              <span>What is your typical turnaround time for web projects?</span>
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Turnaround depends on project scope and features. A high-conversion landing page or single-page web app typically takes 1 to 2 weeks. Comprehensive e-commerce storefronts or full-featured multi-page web applications typically range from 2 to 4 weeks with weekly demo milestones.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item glass-card">
+            <button class="faq-question" aria-expanded="false">
+              <span>Are you available for remote full-time or contract work?</span>
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Yes, I am available worldwide for remote full-time software engineering roles, ongoing contracts, and milestone-based freelance development projects across various time zones.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item glass-card">
+            <button class="faq-question" aria-expanded="false">
+              <span>What technologies do you specialize in?</span>
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              I specialize in core web standards: semantic HTML5, modern CSS3 (custom property theming, glassmorphism, responsive grid & flexbox systems), and clean modular ES6+ JavaScript. I manage code through Git/GitHub and deploy continuously via Netlify.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item glass-card">
+            <button class="faq-question" aria-expanded="false">
+              <span>How do we begin a project together?</span>
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Simply fill out the direct message form above or email me directly at abhiihere2004@gmail.com with an outline of your project goals, preferred timeline, and any design references. I'll get back to you within 24 hours to coordinate details.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating Back to Top Button with SVG Progress Ring -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top" title="Scroll to top">
+    <svg class="progress-ring" width="50" height="50">
+      <circle class="progress-ring-bg" cx="25" cy="25" r="22.5"></circle>
+      <circle class="progress-ring-circle" cx="25" cy="25" r="22.5"></circle>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <span class="brand-monogram">AS</span>
+        <div>
+          <p class="footer-title">Abdullah Saeed</p>
+          <p class="footer-subtitle">Software Engineer & Web Developer</p>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-right">
+        <p class="copyright">© 2026 Abdullah Saeed. Built with passion & clean code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

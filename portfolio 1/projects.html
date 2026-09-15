@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-palette="emerald">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects Showcase | Abdullah Saeed - Software Engineer</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore production web applications and engineering case studies by Abdullah Saeed, including Fitzone Fitness and ApexStore e-commerce.">
+  <meta name="keywords" content="Abdullah Saeed Projects, Fitzone Fitness, ApexStore, Web Applications, JavaScript Portfolio, Frontend Case Studies">
+  <meta name="author" content="Abdullah Saeed">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Projects Showcase | Abdullah Saeed - Software Engineer">
+  <meta property="og:description" content="Real-world web applications built with semantic HTML5, modern CSS3, and modular vanilla JavaScript.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon (SVG Monogram) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2310b981'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='44' font-weight='bold' fill='%23ffffff'>AS</text></svg>">
+</head>
+<body>
+  <!-- Reading Scroll Progress Bar -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Ambient Background Lighting & Interactive Particle Canvas -->
+  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="header">
+    <nav class="nav-container" aria-label="Main Navigation">
+      <a href="index.html" class="nav-brand" aria-label="Abdullah Saeed Home">
+        <span class="brand-monogram has-avatar">
+          <img src="assets/images/profile.jpg" alt="Abdullah Saeed" class="brand-avatar-img">
+        </span>
+        <span class="brand-name">Abdullah<span> Saeed</span></span>
+      </a>
+
+      <div class="nav-links-desktop">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Palette Switcher -->
+        <div class="palette-switcher" title="Choose color accent" aria-label="Theme Color Accent">
+          <button class="palette-btn palette-emerald active" data-palette="emerald" title="Emerald & Mint" aria-label="Emerald and Mint color theme" aria-pressed="true"></button>
+          <button class="palette-btn palette-violet" data-palette="violet" title="Cyber Violet & Amber" aria-label="Cyber Violet color theme" aria-pressed="false"></button>
+          <button class="palette-btn palette-gold" data-palette="gold" title="Champagne Gold" aria-label="Champagne Gold color theme" aria-pressed="false"></button>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="btn-icon theme-btn" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="contact.html" class="btn btn-sm btn-primary nav-cta">Let's Connect</a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-user">
+        <div class="drawer-avatar-ring">
+          <img src="assets/images/profile.jpg" alt="Abdullah Saeed" class="drawer-avatar-img">
+        </div>
+        <div class="drawer-user-info">
+          <span class="drawer-user-name">Abdullah Saeed</span>
+          <span class="drawer-user-role">Software Engineer</span>
+        </div>
+      </div>
+      <button id="drawer-close" class="btn-icon" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-links">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="about.html" class="drawer-link">About Me</a>
+      <a href="projects.html" class="drawer-link active">Projects</a>
+      <a href="skills.html" class="drawer-link">Skills & Services</a>
+      <a href="contact.html" class="drawer-link">Contact Hub</a>
+    </div>
+    <div class="drawer-footer">
+      <div class="drawer-theme-row">
+        <span class="drawer-theme-label">Accent Palette</span>
+        <div class="palette-switcher" title="Choose color accent">
+          <button class="palette-btn palette-emerald active" data-palette="emerald" title="Emerald"></button>
+          <button class="palette-btn palette-violet" data-palette="violet" title="Violet"></button>
+          <button class="palette-btn palette-gold" data-palette="gold" title="Gold"></button>
+        </div>
+      </div>
+
+      <div class="drawer-theme-row">
+        <span class="drawer-theme-label">Appearance</span>
+        <button id="drawer-theme-toggle" class="drawer-theme-toggle" aria-label="Toggle theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span class="theme-text">Toggle Mode</span>
+        </button>
+      </div>
+
+      <div class="drawer-contact-section">
+        <p class="drawer-contact-title">Direct Inquiries</p>
+        <a href="mailto:abhiihere2004@gmail.com" class="drawer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>abhiihere2004@gmail.com</span>
+        </a>
+        <a href="tel:0395241669" class="drawer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>0395241669</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+
+  <main id="main-content">
+    <!-- Page Hero Banner -->
+    <section class="page-hero">
+      <div class="container" data-reveal="up">
+        <span class="page-badge">Featured Work & Code</span>
+        <h1 class="page-title">Engineering <span class="gradient-text">Case Studies</span></h1>
+        <p class="page-lead">
+          Detailed breakdown of live applications, e-commerce storefronts, and interactive web tools engineered with modern frontend standards.
+        </p>
+      </div>
+    </section>
+
+    <!-- Project Gallery with Interactive Filter -->
+    <section class="section projects-section" style="padding-top: 0;">
+      <div class="container">
+        <!-- Filter Tabs -->
+        <div class="filter-bar" data-reveal="up">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="webapp">Web Applications</button>
+          <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+          <button class="filter-btn" data-filter="javascript">JavaScript Logic</button>
+        </div>
+
+        <div class="projects-showcase">
+          <!-- Project 1: Fitzone Fitness -->
+          <article class="project-card glass-card" data-category="webapp javascript" data-reveal="up">
+            <div class="project-media">
+              <img src="assets/images/fitzone-preview.jpg" alt="Fitzone Fitness single page web app preview" class="project-img" loading="lazy">
+              <div class="project-media-overlay">
+                <span class="project-badge">Web Application</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-header">
+                <div class="project-tags">
+                  <span class="tag">HTML5</span>
+                  <span class="tag">CSS3</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Responsive UI</span>
+                  <span class="tag">Netlify</span>
+                </div>
+                <h2 class="project-title" style="font-size: 1.5rem;">Fitzone Fitness</h2>
+              </div>
+
+              <p class="project-description">
+                A high-energy, responsive single-page web application designed for a modern fitness facility ("Train Hard. Stay Strong."). Built with clean semantic markup, custom CSS Grid layouts, coach spotlights, and transparent membership pricing cards.
+              </p>
+
+              <div class="project-features">
+                <div class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Responsive mobile-first layout with smooth touch scrolling</span>
+                </div>
+                <div class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Interactive class schedules and transparent pricing tiers</span>
+                </div>
+                <div class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Fast Netlify continuous deployment with optimized assets</span>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://capable-pixie-7a0ab4.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" title="View Fitzone Fitness Live Demo">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/abhiihere2004-alt/Fitzone-Fitness" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" title="View Fitzone Fitness on GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>Source Code</span>
+                </a>
+                <button class="btn btn-outline btn-quick-view" data-project="fitzone">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <span>Case Study</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: ApexStore -->
+          <article class="project-card glass-card" data-category="ecommerce javascript" data-reveal="up" data-delay="150">
+            <div class="project-media">
+              <img src="assets/images/apexstore-preview.jpg" alt="ApexStore modern e-commerce web application preview" class="project-img" loading="lazy">
+              <div class="project-media-overlay">
+                <span class="project-badge badge-cyan">E-Commerce Storefront</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-header">
+                <div class="project-tags">
+                  <span class="tag">HTML5</span>
+                  <span class="tag">CSS3</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">State Management</span>
+                  <span class="tag">Netlify</span>
+                </div>
+                <h2 class="project-title" style="font-size: 1.5rem;">ApexStore</h2>
+              </div>
+
+              <p class="project-description">
+                A modern, curated e-commerce storefront for premium lifestyle essentials, consumer audio, and workspace accessories. Features interactive product collections, persistent cart state management, promo code calculation, and Netlify hosting.
+              </p>
+
+              <div class="project-features">
+                <div class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Product catalog with category filter & real-time search</span>
+                </div>
+                <div class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Cart state management & real-time discount promo logic</span>
+                </div>
+                <div class="feature-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Aura noise-canceling audio hero feature with glassmorphic cards</span>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/abhiihere2004-alt/APEX-STORE" target="_blank" rel="noopener noreferrer" class="btn btn-primary" title="View ApexStore on GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>Source Code</span>
+                </a>
+                <button class="btn btn-secondary btn-quick-view" data-project="apexstore">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <span>Case Study</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lab & Upcoming Roadmap Section -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-header text-center" data-reveal="up">
+          <span class="section-subtitle">Roadmap & Exploration</span>
+          <h2 class="section-title">What's In The Works</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+          <div class="pillar-card glass-card" data-reveal="left">
+            <div class="pillar-icon icon-cyan">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div>
+              <h3 class="pillar-title">DevPulse Developer Dashboard</h3>
+              <p class="pillar-desc">
+                An experimental developer productivity dashboard featuring API health telemetry, live git statistics, and responsive dark charts.
+              </p>
+            </div>
+          </div>
+
+          <div class="pillar-card glass-card" data-reveal="right">
+            <div class="pillar-icon icon-violet">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+                <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+                <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+                <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+                <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+                <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+              </svg>
+            </div>
+            <div>
+              <h3 class="pillar-title">Interactive CSS Motion Playground</h3>
+              <p class="pillar-desc">
+                A showcase lab demonstrating high-fps micro-interactions, canvas constellations, SVG morphing, and glassmorphic elevation patterns.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="container" data-reveal="scale">
+      <div class="cta-banner glass-card">
+        <h2 class="cta-title">Have a Project in Mind?</h2>
+        <p class="cta-desc">
+          Whether you need a full web application built from scratch or a high-conversion redesign, let's discuss your requirements.
+        </p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg">
+            <span>Start a Project</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </a>
+          <a href="skills.html" class="btn btn-secondary btn-lg">
+            <span>Review My Skills</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Quick Project Overview Modal -->
+  <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-content glass-card">
+      <button class="modal-close" id="modal-close" aria-label="Close details modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button with SVG Progress Ring -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top" title="Scroll to top">
+    <svg class="progress-ring" width="50" height="50">
+      <circle class="progress-ring-bg" cx="25" cy="25" r="22.5"></circle>
+      <circle class="progress-ring-circle" cx="25" cy="25" r="22.5"></circle>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <span class="brand-monogram">AS</span>
+        <div>
+          <p class="footer-title">Abdullah Saeed</p>
+          <p class="footer-subtitle">Software Engineer & Web Developer</p>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-right">
+        <p class="copyright">© 2026 Abdullah Saeed. Built with passion & clean code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
